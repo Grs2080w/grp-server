@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"time"
 
 	admin "github.com/Grs2080w/grp_server/core/api/admin"
 	auth "github.com/Grs2080w/grp_server/core/api/auth"
@@ -22,6 +23,7 @@ import (
 
 	"github.com/Grs2080w/grp_server/core/db/dynamo/clientDb"
 	"github.com/Grs2080w/grp_server/core/db/redis"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -31,7 +33,17 @@ import (
 // @host localhost:8080
 // @BasePath /
 func main() {
+	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
+
+	router.Use(cors.New(cors.Config{
+        AllowOrigins:     []string{"*",},
+        AllowMethods:     []string{"GET", "POST", "PATCH", "DELETE", "OPTIONS"},
+        AllowHeaders:     []string{"Origin", "Content-Type", "Authorization", "Accept", "X-Request-ID"},
+        ExposeHeaders:    []string{"Content-Length", "X-Request-ID"},
+        AllowCredentials: true,
+        MaxAge:           12 * time.Hour,
+    }))
 
 	err := clientDb.InitDynamoClient()
 	if err != nil {
