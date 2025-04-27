@@ -1,0 +1,1823 @@
+basePath: /
+definitions:
+  addEbook.Ebook:
+    properties:
+      date:
+        type: string
+      extension:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      pk:
+        type: string
+      size:
+        type: number
+      sk:
+        type: string
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+      username:
+        type: string
+    type: object
+  addEbook.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  addEbook.Response:
+    properties:
+      ebook:
+        $ref: '#/definitions/addEbook.Ebook'
+      message:
+        type: string
+    type: object
+  addFile.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  addFile.Files:
+    properties:
+      extension:
+        type: string
+      filename:
+        type: string
+      pk:
+        type: string
+      sk:
+        type: string
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+      username:
+        type: string
+      versions:
+        items:
+          $ref: '#/definitions/addFile.Version'
+        type: array
+    type: object
+  addFile.FormData:
+    type: object
+  addFile.Request:
+    properties:
+      file:
+        $ref: '#/definitions/addFile.FormData'
+      filename:
+        type: string
+      size:
+        type: number
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+    type: object
+  addFile.Response:
+    properties:
+      file:
+        $ref: '#/definitions/addFile.Files'
+      message:
+        type: string
+    type: object
+  addFile.Version:
+    properties:
+      date:
+        type: string
+      id:
+        type: string
+      is_latest:
+        type: boolean
+      size:
+        type: number
+      version:
+        type: string
+    type: object
+  addMessage.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  addMessage.Request:
+    properties:
+      message:
+        type: string
+      size:
+        type: number
+    type: object
+  addMessage.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  addTask.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  addTask.Tasks:
+    properties:
+      date:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      pk:
+        type: string
+      size:
+        type: number
+      sk:
+        type: string
+      status:
+        type: string
+      tags:
+        items:
+          type: string
+        type: array
+      title:
+        type: string
+      username:
+        type: string
+    type: object
+  addTask.UserRequest:
+    properties:
+      description:
+        type: string
+      size:
+        type: number
+      tags:
+        items:
+          type: string
+        type: array
+      title:
+        type: string
+    type: object
+  authMaster.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  authMaster.SuccessResponse:
+    properties:
+      data:
+        type: string
+      status:
+        type: integer
+    type: object
+  authMaster.UserAuthMaster:
+    properties:
+      master_password:
+        type: string
+      token:
+        type: string
+    type: object
+  authOtp.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  authOtp.SuccessResponse:
+    properties:
+      data:
+        type: string
+      status:
+        type: integer
+    type: object
+  authOtp.UserAuthOtp:
+    properties:
+      token:
+        type: string
+    type: object
+  authSecret.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  authSecret.SuccessResponse:
+    properties:
+      data:
+        type: string
+      status:
+        type: integer
+    type: object
+  authSecret.UserAuthSecret:
+    properties:
+      secret_code:
+        type: string
+      token:
+        type: string
+    type: object
+  authSimple.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  authSimple.SuccessResponse:
+    properties:
+      data:
+        type: string
+      status:
+        type: integer
+      type:
+        type: string
+    type: object
+  authSimple.UserAuth:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  changeStatus.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  changeStatus.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  changeStatus.UserRequest:
+    properties:
+      id:
+        type: string
+      token:
+        type: string
+    type: object
+  core_api_download_downloadFile.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  core_api_download_downloadFile.SuccessResponse:
+    properties:
+      url:
+        type: string
+    type: object
+  createPwd.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  createPwd.Params:
+    properties:
+      digits:
+        type: boolean
+      length:
+        type: integer
+      lowercase_letters:
+        type: boolean
+      special_characters:
+        type: boolean
+      uppercase_letters:
+        type: boolean
+    type: object
+  createPwd.Request:
+    properties:
+      identifier:
+        type: string
+      master:
+        type: string
+      mode:
+        type: string
+      params:
+        $ref: '#/definitions/createPwd.Params'
+      password:
+        type: string
+      size:
+        type: number
+      tags:
+        items:
+          type: string
+        type: array
+    type: object
+  createPwd.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  createUser.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  createUser.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  createUser.UserRequest:
+    properties:
+      code:
+        type: string
+      email:
+        type: string
+      extra_verification:
+        type: string
+      language:
+        type: string
+      password:
+        type: string
+      theme_preferences:
+        type: string
+      username:
+        type: string
+    type: object
+  deleteFile.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  deleteFile.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  deleteFile.UserRequest:
+    properties:
+      filename:
+        type: string
+      id:
+        type: string
+      type:
+        type: string
+    type: object
+  deleteMessage.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  deleteMessage.SucessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  deletePwd.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  deletePwd.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  deleteTask.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  deleteTask.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  deleteTask.UserRequest:
+    properties:
+      id:
+        type: string
+      token:
+        type: string
+    type: object
+  exists.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  exists.SuccessResponse:
+    properties:
+      exists:
+        type: boolean
+    type: object
+  exists.UserRequest:
+    properties:
+      filename:
+        type: string
+      type:
+        type: string
+    type: object
+  getEbooks.Ebook:
+    properties:
+      date:
+        type: string
+      extension:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      size:
+        type: number
+      tags:
+        items:
+          type: string
+        type: array
+    type: object
+  getEbooks.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getFile.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getFile.Files:
+    properties:
+      extension:
+        type: string
+      filename:
+        type: string
+      pk:
+        type: string
+      sk:
+        type: string
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+      username:
+        type: string
+      versions:
+        items:
+          $ref: '#/definitions/getFile.Version'
+        type: array
+    type: object
+  getFile.UserRequest:
+    properties:
+      filename:
+        type: string
+      type:
+        type: string
+    type: object
+  getFile.Version:
+    properties:
+      date:
+        type: string
+      id:
+        type: string
+      is_latest:
+        type: boolean
+      size:
+        type: number
+      version:
+        type: string
+    type: object
+  getFiles.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getFiles.Files:
+    properties:
+      extension:
+        type: string
+      filename:
+        type: string
+      pk:
+        type: string
+      sk:
+        type: string
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+      username:
+        type: string
+      versions:
+        items:
+          $ref: '#/definitions/getFiles.Version'
+        type: array
+    type: object
+  getFiles.UserRequest:
+    properties:
+      token:
+        type: string
+    type: object
+  getFiles.Version:
+    properties:
+      date:
+        type: string
+      id:
+        type: string
+      is_latest:
+        type: boolean
+      size:
+        type: number
+      version:
+        type: string
+    type: object
+  getMessages.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getMessages.Message:
+    properties:
+      date:
+        type: string
+      hour:
+        type: string
+      id:
+        type: string
+      message:
+        type: string
+    type: object
+  getMetrics.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getMetrics.Response:
+    properties:
+      files_per_extension:
+        additionalProperties:
+          type: integer
+        type: object
+      records_per_domain:
+        additionalProperties:
+          type: integer
+        type: object
+      storage_per_domain:
+        additionalProperties:
+          type: integer
+        type: object
+      storage_per_type:
+        additionalProperties:
+          type: integer
+        type: object
+    type: object
+  getPwd.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getPwd.Passwords:
+    properties:
+      hash:
+        type: string
+      id:
+        type: string
+      identifier:
+        type: string
+      size:
+        type: number
+      tags:
+        items:
+          type: string
+        type: array
+    type: object
+  getPwds.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getPwds.Passwords:
+    properties:
+      hash:
+        type: string
+      id:
+        type: string
+      identifier:
+        type: string
+      size:
+        type: number
+      tags:
+        items:
+          type: string
+        type: array
+    type: object
+  getTag.Ebook:
+    type: object
+  getTag.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getTag.Files:
+    type: object
+  getTag.Passwords:
+    type: object
+  getTag.SuccessResponse:
+    properties:
+      ebooks:
+        items:
+          $ref: '#/definitions/getTag.Ebook'
+        type: array
+      files:
+        items:
+          $ref: '#/definitions/getTag.Files'
+        type: array
+      passwords:
+        items:
+          $ref: '#/definitions/getTag.Passwords'
+        type: array
+      tasks:
+        items:
+          $ref: '#/definitions/getTag.Tasks'
+        type: array
+    type: object
+  getTag.Tasks:
+    type: object
+  getTags.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getTask.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getTask.Tasks:
+    properties:
+      date:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      pk:
+        type: string
+      size:
+        type: number
+      sk:
+        type: string
+      status:
+        type: string
+      tags:
+        items:
+          type: string
+        type: array
+      title:
+        type: string
+      username:
+        type: string
+    type: object
+  getTask.UserRequest:
+    properties:
+      id:
+        type: string
+      token:
+        type: string
+    type: object
+  getlogs.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  getlogs.Logs:
+    properties:
+      domain:
+        type: string
+      ip_address:
+        type: string
+      level:
+        type: string
+      log_id:
+        type: string
+      message:
+        type: string
+      metadata:
+        type: string
+      operation:
+        type: string
+      pk:
+        type: string
+      sk:
+        type: string
+      stack_trace:
+        type: string
+      status_code:
+        type: string
+      timestamp:
+        type: integer
+      username:
+        type: string
+    type: object
+  listTasks.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  listTasks.Tasks:
+    properties:
+      description:
+        type: string
+      id:
+        type: string
+      status:
+        type: string
+      title:
+        type: string
+    type: object
+  listTasks.TasksList:
+    properties:
+      tasks:
+        items:
+          $ref: '#/definitions/listTasks.Tasks'
+        type: array
+    type: object
+  listTasks.UserRequest:
+    properties:
+      token:
+        type: string
+    type: object
+  updateAvatarUrl.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  updateAvatarUrl.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  updateAvatarUrl.UserRequest:
+    properties:
+      avatar_url:
+        type: string
+    type: object
+  updateEmail.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  updateEmail.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  updateEmail.UserRequest:
+    properties:
+      email:
+        type: string
+    type: object
+  updateMasterPassword.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  updateMasterPassword.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  updateMasterPassword.UserRequest:
+    properties:
+      master_password:
+        type: string
+    type: object
+  updatePassword.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  updatePassword.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  updatePassword.UserRequest:
+    properties:
+      code:
+        type: string
+      password:
+        type: string
+    type: object
+  updateTheme.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  updateTheme.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  updateTheme.UserRequest:
+    properties:
+      theme:
+        type: string
+    type: object
+  updateTypeVerification.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  updateTypeVerification.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  updateTypeVerification.UserRequest:
+    properties:
+      type:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API for personal server.
+  title: grp@server
+  version: "1.0"
+paths:
+  /auth:
+    post:
+      consumes:
+      - application/json
+      description: Validate the user and the password and return a temp jwt
+      parameters:
+      - description: User Credentials
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/authSimple.UserAuth'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/authSimple.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/authSimple.ErrorResponse'
+      summary: Auth the user
+      tags:
+      - auth
+  /auth/master:
+    post:
+      consumes:
+      - application/json
+      description: Validate the master_password sent by the user and return a temp
+        jwt with more duration
+      parameters:
+      - description: User token and master_password
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/authMaster.UserAuthMaster'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/authMaster.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/authMaster.ErrorResponse'
+      summary: Auth and verify the master_password of the user
+      tags:
+      - auth
+  /auth/otp:
+    post:
+      consumes:
+      - application/json
+      description: This route is called when the user wants to change a sensitive
+        information, it sends an otp code for the user email
+      parameters:
+      - description: User token in headers
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/authOtp.UserAuthOtp'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/authOtp.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/authOtp.ErrorResponse'
+      summary: Send otp code
+      tags:
+      - auth
+  /auth/secret:
+    post:
+      consumes:
+      - application/json
+      description: Validate the secret_code sent by the user and return a temp jwt
+        with more duration
+      parameters:
+      - description: User token and secret_code
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/authSecret.UserAuthSecret'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/authSecret.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/authSecret.ErrorResponse'
+      summary: Auth and verify the secret_code of the user
+      tags:
+      - auth
+  /chat:
+    get:
+      consumes:
+      - application/json
+      description: Get all messages with the header token
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/getMessages.Message'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getMessages.ErrorResponse'
+      summary: Get all messages
+      tags:
+      - chat
+    post:
+      consumes:
+      - application/json
+      description: Add a message with the request body
+      parameters:
+      - description: Request body
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/addMessage.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/addMessage.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/addMessage.ErrorResponse'
+      summary: Add a message
+      tags:
+      - chat
+  /chat/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a message with the header token and id in path
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Id of message
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/deleteMessage.SucessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/deleteMessage.ErrorResponse'
+      summary: Delete a message
+      tags:
+      - chat
+  /download:
+    get:
+      consumes:
+      - application/json
+      description: Return a PRESIGNED URL for Download of a file with the query id
+        and ext, valid for files and ebooks
+      parameters:
+      - description: id file
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: extension file
+        in: query
+        name: ext
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/core_api_download_downloadFile.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/core_api_download_downloadFile.ErrorResponse'
+      summary: Download a file
+      tags:
+      - download
+  /ebooks:
+    get:
+      consumes:
+      - application/json
+      description: Get all ebooks
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/getEbooks.Ebook'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getEbooks.ErrorResponse'
+      summary: Get all ebooks
+      tags:
+      - ebook
+    post:
+      consumes:
+      - multipart/form-data
+      description: Add a ebook with the request body
+      parameters:
+      - description: Request body
+        in: formData
+        name: ebook
+        required: true
+        type: file
+      - description: Request body
+        in: formData
+        name: size
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/addEbook.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/addEbook.ErrorResponse'
+      summary: Add a ebook
+      tags:
+      - ebook
+  /ebooks/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a ebook with the request body
+      parameters:
+      - description: Ebook id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/getEbooks.Ebook'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getEbooks.ErrorResponse'
+      summary: Delete a ebook
+      tags:
+      - ebook
+    get:
+      consumes:
+      - application/json
+      description: Get a ebook with the request body
+      parameters:
+      - description: Ebook id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/getEbooks.Ebook'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getEbooks.ErrorResponse'
+      summary: Get a ebook
+      tags:
+      - ebook
+  /files:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a file with the request body
+      parameters:
+      - description: Request body
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/deleteFile.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/deleteFile.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/deleteFile.ErrorResponse'
+      summary: Delete a file
+      tags:
+      - file
+    get:
+      consumes:
+      - application/json
+      description: Get a files with the request body
+      parameters:
+      - description: Request body
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/getFiles.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/getFiles.Files'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getFiles.ErrorResponse'
+      summary: Get a files
+      tags:
+      - file
+    post:
+      consumes:
+      - application/json
+      description: Add a file with the request body
+      parameters:
+      - description: Request body
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/addFile.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/addFile.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/addFile.ErrorResponse'
+      summary: Add a file
+      tags:
+      - file
+  /files/exists:
+    get:
+      consumes:
+      - application/json
+      description: Check if a file exists with the request body
+      parameters:
+      - description: Request body
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/exists.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/exists.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/exists.ErrorResponse'
+      summary: Check if a file exists
+      tags:
+      - file
+  /files/one:
+    get:
+      consumes:
+      - application/json
+      description: Get a file with the request body
+      parameters:
+      - description: Request body
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/getFile.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/getFile.Files'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getFile.ErrorResponse'
+      summary: Get a file
+      tags:
+      - file
+  /health:
+    get:
+      consumes:
+      - application/json
+      description: Check server health
+      produces:
+      - application/json
+      responses: {}
+      summary: Check server health
+      tags:
+      - health
+  /logs:
+    get:
+      consumes:
+      - application/json
+      description: Get all logs with no params
+      parameters:
+      - description: admin token
+        in: header
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/getlogs.Logs'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getlogs.ErrorResponse'
+      summary: Get all logs
+      tags:
+      - admin
+  /metrics:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve metrics for a user using their authentication token.
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/getMetrics.Response'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/getMetrics.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/getMetrics.ErrorResponse'
+      summary: Retrieve metrics
+      tags:
+      - metrics
+  /passwords:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all passwords associated with the user, requires a username
+        in the header
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/getPwds.Passwords'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/getPwds.ErrorResponse'
+      summary: Get user's passwords
+      tags:
+      - passwords
+    post:
+      consumes:
+      - application/json
+      description: Create a new password with a random password, this endpoint require
+        a username in the header
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/createPwd.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/createPwd.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/createPwd.ErrorResponse'
+      summary: Create a new password
+      tags:
+      - passwords
+  /passwords/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a password with the id in the path, this endpoint require
+        a username in the header
+      parameters:
+      - description: Password id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/deletePwd.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/deletePwd.ErrorResponse'
+      summary: Delete a password
+      tags:
+      - passwords
+    get:
+      consumes:
+      - application/json
+      description: Get a password with the id in the path, this endpoint require a
+        username in the header
+      parameters:
+      - description: Password id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/getPwd.Passwords'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getPwd.ErrorResponse'
+      summary: Get a password
+      tags:
+      - passwords
+  /tags:
+    get:
+      consumes:
+      - application/json
+      description: Get all tags with the header token
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              type: string
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getTags.ErrorResponse'
+      summary: Get all tags
+      tags:
+      - tags
+  /tags/:tag:
+    get:
+      consumes:
+      - application/json
+      description: Get all domain with relationship with the user tags from a user
+        with the header token
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Tag name
+        in: path
+        name: tag
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/getTag.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getTag.ErrorResponse'
+      summary: Get all domains by tags from a user
+      tags:
+      - tags
+  /tasks:
+    get:
+      consumes:
+      - application/json
+      description: Get all tasks from a user with token
+      parameters:
+      - description: Token in headers
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/listTasks.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/listTasks.TasksList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/listTasks.ErrorResponse'
+      summary: Get all tasks from a user
+      tags:
+      - task
+    post:
+      consumes:
+      - application/json
+      description: Add a task with the request body
+      parameters:
+      - description: Request body
+        in: body
+        name: task
+        required: true
+        schema:
+          $ref: '#/definitions/addTask.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/addTask.Tasks'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/addTask.ErrorResponse'
+      summary: Add a task
+      tags:
+      - task
+  /tasks/:id:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a task with the url id and token
+      parameters:
+      - description: url id and token
+        in: body
+        name: task
+        required: true
+        schema:
+          $ref: '#/definitions/deleteTask.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/deleteTask.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/deleteTask.ErrorResponse'
+      summary: Delete a task
+      tags:
+      - task
+    get:
+      consumes:
+      - application/json
+      description: Get a task with the url id and token
+      parameters:
+      - description: url id and token
+        in: body
+        name: task
+        required: true
+        schema:
+          $ref: '#/definitions/getTask.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/getTask.Tasks'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/getTask.ErrorResponse'
+      summary: Get a task
+      tags:
+      - task
+    patch:
+      consumes:
+      - application/json
+      description: Change status task with the request body and url id and token
+      parameters:
+      - description: url id and token
+        in: body
+        name: task
+        required: true
+        schema:
+          $ref: '#/definitions/changeStatus.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/changeStatus.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/changeStatus.ErrorResponse'
+      summary: Change status task
+      tags:
+      - task
+  /users:
+    post:
+      consumes:
+      - application/json
+      description: Create a user with the request body
+      parameters:
+      - description: Request body
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/createUser.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/createUser.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/createUser.ErrorResponse'
+      summary: Create a user
+      tags:
+      - user
+  /users/avatar_url:
+    patch:
+      consumes:
+      - application/json
+      description: Update a user avatar with the request body
+      parameters:
+      - description: avatar url in body and token in headers
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/updateAvatarUrl.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/updateAvatarUrl.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/updateAvatarUrl.ErrorResponse'
+      summary: Update a user avatar
+      tags:
+      - user
+  /users/email:
+    patch:
+      consumes:
+      - application/json
+      description: Update a user email with the request body
+      parameters:
+      - description: email in body and token in headers
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/updateEmail.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/updateEmail.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/updateEmail.ErrorResponse'
+      summary: Update a user email
+      tags:
+      - user
+  /users/master:
+    patch:
+      consumes:
+      - application/json
+      description: Update a user master password with the request body
+      parameters:
+      - description: master password in body and token in headers
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/updateMasterPassword.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/updateMasterPassword.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/updateMasterPassword.ErrorResponse'
+      summary: Update a user master password
+      tags:
+      - user
+  /users/password:
+    patch:
+      consumes:
+      - application/json
+      description: Update a user password with the request body
+      parameters:
+      - description: password in body and token in headers
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/updatePassword.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/updatePassword.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/updatePassword.ErrorResponse'
+      summary: Update a user password
+      tags:
+      - user
+  /users/theme:
+    patch:
+      consumes:
+      - application/json
+      description: Update a user Theme with the request body
+      parameters:
+      - description: Theme in body and token in headers
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/updateTheme.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/updateTheme.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/updateTheme.ErrorResponse'
+      summary: Update a user Theme
+      tags:
+      - user
+  /users/type:
+    patch:
+      consumes:
+      - application/json
+      description: Update a user Type verification with the request body
+      parameters:
+      - description: Type verification in body and token in headers
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/updateTypeVerification.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/updateTypeVerification.SuccessResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/updateTypeVerification.ErrorResponse'
+      summary: Update a user Type verification
+      tags:
+      - user
+swagger: "2.0"
