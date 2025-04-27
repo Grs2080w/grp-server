@@ -1,6 +1,6 @@
 # GRP Server
 
-##Introduction
+## Introduction
 
 A personal **enterprise-grade** server, written in Go with modular architecture, ready for high scalability, robust security and optimized performance. Exposure to AWS via API Gateway → EC2, it uses managed services (DynamoDB, S3, Redis) and end-to-end encryption (SSH, AES-GCM). This server was designed to be used by me (and by other people as there is support for this) on a daily basis, from anywhere with internet and a Browser.
 
