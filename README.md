@@ -68,7 +68,7 @@ A personal **enterprise-grade** server, written in Go with modular architecture,
 
 ---
 
-##Project Structure
+## Project Structure
 
     grp@server/
     ├── cmd/
