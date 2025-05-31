@@ -70,6 +70,10 @@ A personal **enterprise-grade** server, written in Go with modular architecture,
 
 ## Project Structure
 
+![image](https://github.com/user-attachments/assets/d27b8c2e-0238-448c-9352-dd32a203652f)
+
+
+
     grp@server/
     ├── cmd/
     │   └── main.go                # Entry point: initializes middlewares, routes, and services
